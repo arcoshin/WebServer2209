@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>IDEA - HTML_test</title>
+</head>
+<body>
+<center><h1>我的首頁</h1><!--<center></center> 置中區域，畫線代表已改版將不支持-->
+    <marquee><!--<marqee></marqee> 跑馬燈-->
+        <font color="red">歡迎光臨跑馬燈</font>
+    </marquee>
+
+    <img src="./myweb/1.png" alt="圖片加載失敗" width="300">
+    <!--  在html頁面上我們可以指定一個資源的路徑以便加載或使用，通常有兩種
+      =========
+      1.相對路徑
+      =========
+      頁面上直接使用"./"表示當前目錄時，html是由瀏覽器解析的，
+      因此該路徑不能與java源代碼中的"./"混淆。
+      java源代碼的"./"是當前的項目目錄，
+      而頁面的"./"表示的是當前瀏覽器訪問當前頁面的URL
+
+      舉例:
+      index.html中引用同目錄下的1.png圖片
+      瀏覽器訪問index.html頁面的URL為:http://localhost:9188/myweb/index.html
+      對於瀏覽器而言，index.html中的標籤src的"./"
+      就是當前URL中的頁面目錄路徑:http://localhost:9188/myweb/
+      所以圖片的路徑替換為:http://localhost:9188/myweb/1.png
+
+      但是不建議使用這種路徑，因為如果圖片不在同一個目錄，會定位不到文件!
+      舉例:
+      瀏覽器訪問不存在a.html的URL為:http://localhost:9188/myweb/a.html
+      服務器因為瀏覽器訪問的頁面不存在，所以將要返回一個404.html頁面
+      而404頁面中，包含了一張圖片<img src="./404.gif">，
+      所以瀏覽器為了顯示該文件，就會再次訪問服務器尋找該圖片，
+      會自動根據src尋找相同目錄中的訪問路徑
+      "./"是當前瀏覽器訪問頁面的URL的目錄路徑:http://localhost:9188/myweb/
+      所以對於瀏覽器而言，圖片的URL會變成:http://localhost:9188/myweb/404.gif(加載失敗)
+
+      =========
+      2.絕對路徑
+      =========
+      使用"./"表示瀏覽器訪問的的頁面的URL的抽象位置的最後一個"./"位置
+      使用"/"表示瀏覽器訪問的的頁面的URL的抽象位置的第一個"./"位置
+      舉例:
+      瀏覽器訪問不存在a.html的URL為:http://localhost:9188/myweb/a.html
+      然後404.html，該頁面也包含一個圖片<img src="/root/404.gif">
+      此處"/"表示:http://localhost:9188/root/404.gif
+
+
+
+      -->
+    <br>
+
+    <!--<input type="">
+    text:普通文本框
+    password:密碼文本框
+    button:普通按鈕
+    submit:表單提交
+    -->
+    <input type="text" placeholder="普通文本框"><br>
+    <input type="password" placeholder="密碼文本框"><br>
+    <input type="button" value="點我一下" onclick="alert('點個鬼阿!')">
+    <input type="submit" value="提交"><br>
+    <a href="https://www.tmooc.cn">超連結，點我一下去達內</a>
+    <!--表格標籤 table tr(table row) td(table data)-->
+    <table border="1" cellspacing="0">
+        <!--    cellspacing 表示內部tr區塊之間的空隙    -->
+        <!--    合併儲存格: colspan 水平合併；rowspan 垂直合併    -->
+        <!--    align="center" 內文置中   -->
+        <tr>
+            <td colspan="3" rowspan="2" align="center">11</td>
+            <td rowspan="2">12</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>21</td>
+            <td>22</td>
+        </tr>
+
+        <tr>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+        </tr>
+    </table>
+
+</center>
+</body>
+</html>

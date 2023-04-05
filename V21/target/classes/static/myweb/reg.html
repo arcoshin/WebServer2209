@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用戶註冊</title>
+</head>
+<body>
+<center>
+    <!--
+    1.單獨的一個表格,是不具備將用戶的信息發送給服務器!!!而表單具備將用戶在文本框中輸入的數據發送給服務器!!!
+    2.表單標籤: <form></form>(注意!!!不是from)
+    3.form標籤有兩個屬性
+      1)action屬性: 用於指定表單提交的位置
+      2)method屬性: 用於指定表單提交的方式,有兩個可選值(get、post),如果不寫改屬性,默認是get提交方式
+        get方式: 會將表單提交的數據拼接在URL的抽象路徑後面
+        post方式: 會將表單提交的數據放在請求信息的消息正文中
+    4.表單若需提交數據，需搭配專門的提交按鈕<input type="submit" value="註冊">
+    5.表單中包含的文本框，如果需要提交數據，需要給文本框通過name起名。
+    6.此時表單提交時，數據會呈現在URL抽象路徑後方
+        http://localhost:9188/myweb/reg?username=12345&password=A123&nickname=A1234&age=A12345
+        其中的抽象路徑
+        /myweb/reg?username=12345&password=A123&nickname=A1234&age=A12345
+        當表單以get形式提交時，抽象路徑就會轉為上述的樣子，格式如下
+
+        請求部分?參數部分
+
+        請求部分由form表單中的action屬性值決定
+        參數部分由form表單中的輸入框決定
+            username=12345
+            password=A123
+            nickname=A1234
+            age=A12345
+    -->
+    <h1>用戶註冊</h1>
+    <!--
+    此處/myweb/reg是對應了服務器內部的業務方法，這個值是提前設計好的
+    -->
+    <form action="/myweb/reg" method="get">
+        <table border="1" cellspacing="0" style="border-color: burlywood">
+            <tr>
+                <td>用戶名</td>
+                <td><input name="username" type="text"></td>
+            </tr>
+            <tr>
+                <td>密碼</td>
+                <td><input name="password" type="password"></td>
+            </tr>
+            <tr>
+                <td>暱稱</td>
+                <td><input name="nickname" type="text"></td>
+            </tr>
+            <tr>
+                <td>年齡</td>
+                <td><input name="age" type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="註冊">
+                </td>
+            </tr>
+        </table>
+    </form>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>IDEA - HTML_test</title>
+</head>
+<body>
+<center><h1>我的首頁</h1><!--<center></center> 置中區域，畫線代表已改版將不支持-->
+    <marquee><!--<marqee></marqee> 跑馬燈-->
+        <font color="red">歡迎光臨跑馬燈</font>
+    </marquee>
+    <!--<input type="">
+    text:普通文本框
+    password:密碼文本框
+    button:普通按鈕
+    submit:表單提交
+    -->
+    <input type="text" placeholder="普通文本框"><br>
+    <input type="password" placeholder="密碼文本框"><br>
+    <input type="button" value="點我一下" onclick="alert('點個鬼阿!')">
+    <input type="submit" value="提交"><br>
+    <a href="https://www.tmooc.cn">超連結，點我一下去達內</a>
+    <!--表格標籤 table tr(table row) td(table data)-->
+    <table border="1" cellspacing="0">
+        <!--    cellspacing 表示內部tr區塊之間的空隙    -->
+        <!--    合併儲存格: colspan 水平合併；rowspan 垂直合併    -->
+        <!--    align="center" 內文置中   -->
+        <tr>
+            <td colspan="3" rowspan="2" align="center">11</td>
+            <td rowspan="2">12</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>21</td>
+            <td>22</td>
+        </tr>
+
+        <tr>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+        </tr>
+    </table>
+
+</center>
+</body>
+</html>
